@@ -21,10 +21,8 @@ class Tareas:
     # Método para listar todas las tareas registradas
     def listar_tareas(self) -> str | None:
         if not self.tareas:
-            print("No hay tareas registradas")
-            return
-        for tarea in self.tareas.values():
-            self.mostrar_tareas(tarea)
+            return [] # Devuelve una lista vacia si no hay tareas
+        return list(self.tareas.values())
 
     # Método para editar una tarea existente
     def editar_tareas(
