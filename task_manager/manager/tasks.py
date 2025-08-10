@@ -10,13 +10,17 @@ class Tasks:
     def add_task(self, title, description, due_date, tag) -> None:
         self.task_id += 1
         # Store the task in the dictionary using the generated id
-        self.tasks[self.task_id] = {
+        new_task = {
             "Id": self.task_id,
             "Title": title,
             "Description": description,
             "Due_Date": due_date,
             "Tag": tag,
         }
+
+        self.tasks[self.task_id] = new_task
+        return new_task 
+
 
     # Method to list all registered tasks
     def list_tasks(self) -> str | None:
@@ -45,8 +49,8 @@ class Tasks:
     # Method to delete an existing task
     def delete_task(self, id: int) -> bool:
         if not self.tasks:
-            print("No tasks registered")
             return False
+        
         for ids, tasks in self.tasks.items():
             if tasks["Id"] == id:
                 del self.tasks[ids]
