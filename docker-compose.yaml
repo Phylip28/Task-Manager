@@ -1,6 +1,6 @@
 services:
   api:
-    image: ghcr.io/phylip28/task-manager:latest
+    image: ghcr.io/phylip28/task-manager:main
     
     container_name: tm-api
 
