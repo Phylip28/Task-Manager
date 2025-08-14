@@ -4,6 +4,11 @@ on:
   push:
     branches:
         - main
+    paths:
+      - task_manager/**
+      - api.py
+      - Dockerfile
+  
   pull_request: 
     branches:
         - main
